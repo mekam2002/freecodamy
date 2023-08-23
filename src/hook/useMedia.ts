@@ -19,7 +19,7 @@ export default function useMedia(){
       width:screenDimensions.width, 
       height:screenDimensions.height, 
       isTablet:screenDimensions.width <= 900,
-      isPhone:screenDimensions.width <= 400
+      isPhone:screenDimensions.width <= 500
 
     }
 }
