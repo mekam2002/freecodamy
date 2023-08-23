@@ -67,7 +67,7 @@ export default function MainDrawer({ open, handleDrawer }: Props) {
   const colors = useGetColors();
   return (
     <Box sx={{ display: "flex" }}>
-      <CustomTopBar />
+      {/* <CustomTopBar /> */}
       <CssBaseline />
       <Drawer variant="permanent" open={open} sx={{}}>
         <Box
@@ -96,7 +96,7 @@ export default function MainDrawer({ open, handleDrawer }: Props) {
 
         <List sx={{ px: 2, bgcolor: colors.main, height: "100%" }}>
           <Stack spacing={2} mt={2}>
-            {SidebarRoutes[0].children.map((el, index) => (
+            {SidebarRoutes?.[0]?.children?.map((el: any, index: number) => (
               <SideBarItem key={index} open={open} item={el} />
             ))}
           </Stack>

@@ -4,15 +4,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import useGetColors from "../hook/useGetColors";
-import { AppBar, Box } from "@mui/material";
+import { AppBar, Box,Typography } from "@mui/material";
 import CustomAvatar from "../components/CustomAvatar";
 
 export default function CustomTopBar() {
   const colors = useGetColors();
   return (
-    <Box sx={{ display: "flex" }}>
-      <AppBar component="nav" sx={{ bgcolor: colors.main, boxShadow: 0 }}>
-        <Toolbar>
+    // <Box sx={{ display: "flex" }}>
+      <AppBar component="nav" sx={{ bgcolor: colors.white, boxShadow: 0,height:100 }}>
+        {/* <Toolbar> */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -22,9 +22,9 @@ export default function CustomTopBar() {
           >
             <MenuIcon />
           </IconButton>
-
-        </Toolbar>
+          <Typography>sddd</Typography>
+        {/* </Toolbar> */}
       </AppBar>
-    </Box>
+    // </Box>
   );
 }

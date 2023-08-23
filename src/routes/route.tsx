@@ -4,10 +4,8 @@ import Home from "../pages/home/Home";
 import Tutoral from "../pages/tutorial/Tutoral";
 import { createBrowserRouter } from "react-router-dom";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import SchoolIcon from '@mui/icons-material/School';
-
-
-
+import SchoolIcon from "@mui/icons-material/School";
+import TutorialDetails from "../pages/tutorial/TutorialDetails";
 
 export interface LocalRouteProps {
   path: string;
@@ -19,12 +17,30 @@ export interface LocalRouteProps {
   index?: boolean;
 }
 
-const NoSideBarRoute: LocalRouteProps[] = [
+const NoSideBarRoute: any[] = [
   {
     name: "Auth",
     path: "/auth",
     element: <Auth />,
   },
+  {
+    name: "Main Layout",
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        name: "Tutorial Details",
+        path: "/tutorial/:id",
+        element: <TutorialDetails />,
+      },
+    ],
+  },
+
+  // {
+  //   name: "Tutorial Details",
+  //   path: "/tutorial/:id",
+  //   element: <TutorialDetails />,
+  // },
 ];
 
 export const SidebarRoutes = [
@@ -41,14 +57,16 @@ export const SidebarRoutes = [
         activeIcon: <DashboardIcon />,
       },
       {
-        name: "Tutorial",
+        name: "Course",
         path: "/tutorial",
         element: <Tutoral />,
         activeIcon: <SchoolIcon />,
-
       },
     ],
   },
 ];
 
-export const router = createBrowserRouter(SidebarRoutes);
+export const router = createBrowserRouter([
+  ...SidebarRoutes,
+  ...NoSideBarRoute,
+]);
