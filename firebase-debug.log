@@ -58,3 +58,36 @@
     at process.processTimers (node:internal/timers:512:7)
 [error] 
 [error] Error: An unexpected error has occurred.
+[debug] [2023-08-24T13:10:41.317Z] ----------------------------------------------------------------------
+[debug] [2023-08-24T13:10:41.321Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kola\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-08-24T13:10:41.322Z] CLI Version:   12.5.1
+[debug] [2023-08-24T13:10:41.323Z] Platform:      win32
+[debug] [2023-08-24T13:10:41.323Z] Node Version:  v18.17.1
+[debug] [2023-08-24T13:10:41.325Z] Time:          Thu Aug 24 2023 06:10:41 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-08-24T13:10:41.325Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-24T13:10:41.330Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-08-24T13:10:41.507Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-24T13:10:41.508Z] > authorizing via signed-in user (stevemekam01@gmail.com)
+[debug] [2023-08-24T13:10:41.508Z] [iam] checking project se-loger-5976e for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2023-08-24T13:10:41.510Z] > refreshing access token with scopes: []
+[debug] [2023-08-24T13:10:41.511Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-08-24T13:10:41.512Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-24T13:10:42.360Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-08-24T13:10:42.361Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-24T13:10:42.389Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/se-loger-5976e:testIamPermissions [none]
+[debug] [2023-08-24T13:10:42.389Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/se-loger-5976e:testIamPermissions x-goog-quota-user=projects/se-loger-5976e
+[debug] [2023-08-24T13:10:42.390Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/se-loger-5976e:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-08-24T13:10:43.727Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/se-loger-5976e:testIamPermissions 200
+[debug] [2023-08-24T13:10:43.727Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/se-loger-5976e:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-08-24T13:10:43.732Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/se-loger-5976e [none]
+[debug] [2023-08-24T13:11:02.641Z] *** [apiv2] error from fetch(https://firebase-public.firebaseio.com/cli.json, {"headers":{},"method":"GET"}): FetchError: request to https://firebase-public.firebaseio.com/cli.json failed, reason: connect ETIMEDOUT 34.120.160.131:443
+[warn] !  Unable to fetch the CLI MOTD and remote config. 
+[debug] [2023-08-24T13:11:02.649Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2023-08-24T13:11:04.958Z] *** [apiv2] error from fetch(https://firebase.googleapis.com/v1beta1/projects/se-loger-5976e, {"headers":{},"method":"GET","signal":{}}): FetchError: request to https://firebase.googleapis.com/v1beta1/projects/se-loger-5976e failed, reason: connect ETIMEDOUT 172.217.20.170:443
+[debug] [2023-08-24T13:11:04.961Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/se-loger-5976e (original: request to https://firebase.googleapis.com/v1beta1/projects/se-loger-5976e failed, reason: connect ETIMEDOUT 172.217.20.170:443)
+[debug] [2023-08-24T13:11:05.975Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/se-loger-5976e
+    at RetryOperation._fn (C:\Users\kola\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:239:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project se-loger-5976e. Please make sure the project exists and your account has permission to access it.
