@@ -1,0 +1,60 @@
+[debug] [2023-08-24T12:13:10.368Z] ----------------------------------------------------------------------
+[debug] [2023-08-24T12:13:10.374Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kola\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2023-08-24T12:13:10.375Z] CLI Version:   12.5.1
+[debug] [2023-08-24T12:13:10.376Z] Platform:      win32
+[debug] [2023-08-24T12:13:10.376Z] Node Version:  v18.17.1
+[debug] [2023-08-24T12:13:10.377Z] Time:          Thu Aug 24 2023 05:13:10 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-08-24T12:13:10.378Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-24T12:13:10.383Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=369688508&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-08-24T12:13:29.570Z] >>> [apiv2][query] POST https://accounts.google.com/o/oauth2/token [none]
+[debug] [2023-08-24T12:13:29.571Z] >>> [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2023-08-24T12:13:31.748Z] *** [apiv2] error from fetch(https://firebase-public.firebaseio.com/cli.json, {"headers":{},"method":"GET"}): FetchError: request to https://firebase-public.firebaseio.com/cli.json failed, reason: connect ETIMEDOUT 34.120.160.131:443
+[warn] !  Unable to fetch the CLI MOTD and remote config. 
+[debug] [2023-08-24T12:13:31.750Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2023-08-24T12:13:50.633Z] *** [apiv2] error from fetch(https://accounts.google.com/o/oauth2/token, {"headers":{},"method":"POST","body":{"_overheadLength":543,"_valueLength":208,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------569621213998769607674823","_events":{},"_eventsCount":1}}): FetchError: request to https://accounts.google.com/o/oauth2/token failed, reason: connect ETIMEDOUT 142.250.179.77:443
+[debug] [2023-08-24T12:13:50.635Z] Token Fetch Error: FirebaseError: Failed to make request to https://accounts.google.com/o/oauth2/token
+    at RetryOperation._fn (C:\Users\kola\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:239:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[debug] [2023-08-24T12:13:50.643Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
+[debug] [2023-08-24T12:13:50.644Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"9a0ccb95-4c43-4250-add4-0a1cd0aa7366"}
+[debug] [2023-08-24T12:14:09.340Z] ----------------------------------------------------------------------
+[debug] [2023-08-24T12:14:09.347Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kola\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2023-08-24T12:14:09.348Z] CLI Version:   12.5.1
+[debug] [2023-08-24T12:14:09.349Z] Platform:      win32
+[debug] [2023-08-24T12:14:09.350Z] Node Version:  v18.17.1
+[debug] [2023-08-24T12:14:09.353Z] Time:          Thu Aug 24 2023 05:14:09 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-08-24T12:14:09.354Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-24T12:14:09.363Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=2949294&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-08-24T12:14:24.965Z] >>> [apiv2][query] POST https://accounts.google.com/o/oauth2/token [none]
+[debug] [2023-08-24T12:14:24.966Z] >>> [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2023-08-24T12:14:25.597Z] <<< [apiv2][status] POST https://accounts.google.com/o/oauth2/token 200
+[debug] [2023-08-24T12:14:25.597Z] <<< [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[info] 
+[info] +  Success! Logged in as stevemekam01@gmail.com 
+[debug] [2023-08-24T12:14:30.764Z] *** [apiv2] error from fetch(https://firebase-public.firebaseio.com/cli.json, {"headers":{},"method":"GET"}): FetchError: request to https://firebase-public.firebaseio.com/cli.json failed, reason: connect ETIMEDOUT 34.120.160.131:443
+[warn] !  Unable to fetch the CLI MOTD and remote config. 
+[debug] [2023-08-24T12:14:30.765Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2023-08-24T12:14:35.687Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\kola\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:254:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.

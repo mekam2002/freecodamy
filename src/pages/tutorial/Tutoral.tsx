@@ -84,13 +84,13 @@ export default function Tutoral() {
                     >
                       <QueryBuilderIcon />
                       <Typography sx={styles.duration}>
-                        {el.duration + " mins"}
+                        {el.duration}
                       </Typography>
                     </Box>
 
                     <AppButton
                       title={"start"}
-                      onClick={() => navigateHandler(el.id)}
+                      onClick={() => navigateHandler(el.courseId)}
                     />
                   </Box>
                 </Box>

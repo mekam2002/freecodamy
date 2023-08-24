@@ -1,0 +1,40 @@
+.container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; */
+}
+
+.row {
+  /* display: flex;
+  align-items: center;
+  margin-top: 100px; */
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #006D5B;
+  margin-right: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.animate {
+  transform: translateY(-50px);
+}
+
+
+/* App.css */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-icon {
+  animation: rotate 2s linear infinite; /* Adjust animation duration as needed */
+}

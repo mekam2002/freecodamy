@@ -6,7 +6,14 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import SchoolIcon from "@mui/icons-material/School";
 import TutorialDetails from "../pages/tutorial/TutorialDetails";
-
+import Challenge from "../pages/challenge/Challenge";
+import Ranking from "../pages/ranking/Ranking";
+import Forum from "../pages/forum/Forum";
+import PeopleIcon from "@mui/icons-material/People";
+import SportsKabaddiIcon from "@mui/icons-material/SportsKabaddi";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import Course from "../pages/course/Course";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 export interface LocalRouteProps {
   path: string;
   name?: string;
@@ -29,8 +36,8 @@ const NoSideBarRoute: any[] = [
     element: <MainLayout />,
     children: [
       {
-        name: "Tutorial Details",
-        path: "/tutorial/:id",
+        name: "Course Details",
+        path: "/course/:id",
         element: <TutorialDetails />,
       },
     ],
@@ -58,9 +65,34 @@ export const SidebarRoutes = [
       },
       {
         name: "Course",
-        path: "/tutorial",
+        path: "/course",
         element: <Tutoral />,
+        activeIcon: <AutoStoriesIcon />,
+      },
+      {
+        name: "Tutorial",
+        path: "/tutorial",
+        element: <Course />,
         activeIcon: <SchoolIcon />,
+      },
+
+      {
+        name: "Challenge",
+        path: "/challenge",
+        element: <Challenge />,
+        activeIcon: <SportsKabaddiIcon />,
+      },
+      {
+        name: "Ranking",
+        path: "/ranking",
+        element: <Ranking />,
+        activeIcon: <EmojiEventsIcon />,
+      },
+      {
+        name: "Forum",
+        path: "/forum",
+        element: <Forum />,
+        activeIcon: <PeopleIcon />,
       },
     ],
   },

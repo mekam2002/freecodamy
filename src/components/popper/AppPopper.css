@@ -1,0 +1,7 @@
+.popper-container{
+    background: #FFFFFF;
+    border: 1px solid #F0F0F0;
+    box-shadow: 1px 16px 22px rgba(0, 0, 0, 0.07);
+    border-radius: 19px;
+    padding:30px 
+}

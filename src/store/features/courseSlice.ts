@@ -8,6 +8,9 @@ export interface CourseType {
     duration?: number;
     title?: string;
     type?: string;
+    courseId?: string
+    rating?: number
+    tags?: string[]
 }
 
 interface CoursState {
@@ -26,7 +29,6 @@ const courserSlice = createSlice({
     reducers: {
         setData: (state, { payload }) => {
             state.data = payload
-            console.log(state.data)
         },
         setLoadingSlice: (state, { payload }) => {
             state.loading = payload

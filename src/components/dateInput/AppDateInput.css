@@ -1,0 +1,7 @@
+.datePicker >div {
+    height: 45px;
+    border-color:#E6E6E6;
+    border-radius: 8px;
+    /* min-width: 230px; */
+    overflow: auto;
+}

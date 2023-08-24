@@ -1,0 +1,17 @@
+.MuiToggleButtonGroup-root{
+  border-radius: 8px;
+  overflow: hidden;
+  height:45px;
+}
+.MuiToggleButtonGroup-root button{
+  border-radius: 8px;
+  text-transform: capitalize;
+  color:#344051;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.MuiToggleButtonGroup-root button.Mui-selected:hover{
+  background-color: #585572;
+  color:#fff
+}
