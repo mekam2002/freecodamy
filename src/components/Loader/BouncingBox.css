@@ -1,0 +1,36 @@
+.squares-container {
+    display: flex;
+    align-items: flex-end;
+    height: 200px;
+    position: relative;
+  }
+  
+  .initial-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+    bottom: 0;
+  }
+  
+  .square {
+    width: 30px;
+    height: 30px;
+    background-color: #006D5B;
+    position: relative;
+    margin-right: 10px; /* Add spacing between squares */
+  }
+  
+  .bounce-animation {
+    animation: bounce 1s infinite alternate;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-40px);
+    }
+  }
+  

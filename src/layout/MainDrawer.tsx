@@ -23,7 +23,7 @@ interface Props {
   handleDrawer: () => void;
 }
 
-const drawerWidth = 340;
+const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,

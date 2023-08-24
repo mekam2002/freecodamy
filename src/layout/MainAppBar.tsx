@@ -12,19 +12,19 @@ import Typography from "@mui/material/Typography";
 import useGetColors from "../hook/useGetColors";
 import { SidebarRoutes } from "../routes/route";
 import SideBarItem from "./SideBarItem";
+import { Avatar } from "@mui/material";
+import LoginModal from "../pages/auth/LoginModal";
+import AppInput from "../components/AppInput";
+
+// ... (other imports and code)
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
+  onClick: () => void;
 }
 
 const drawerWidth = 240;
 
-export default function MainAppBar(props: Props) {
-  const { window } = props;
+export default function MainAppBar({ onClick }: Props) {
   const colors = useGetColors();
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -59,21 +59,40 @@ export default function MainAppBar(props: Props) {
   );
 
   const container =
-    window !== undefined ? () => window().document.body : undefined;
+    typeof window !== "undefined" ? () => window.document.body : undefined;
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ bgcolor: colors.main, boxShadow: 0 }}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            // width: "90%",
+          }}
+        >
+          <Box sx={{ display: "flex" }}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <AppInput
+              inputStyle={{ backgroundColor: "white" }}
+              containerStyle={{
+                bgcolor: "white",
+                borderRadius: "10px",
+              }}
+            />
+          </Box>
+
+          <IconButton onClick={onClick}>
+            <Avatar alt="Remy Sharp" src="" />
           </IconButton>
         </Toolbar>
       </AppBar>

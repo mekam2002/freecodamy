@@ -32,11 +32,11 @@ export default function TutorialDetails() {
     return <p>Error: {error.message}</p>;
   }
 
-  if (!data) {
-    return <p>No data available</p>;
-  }
+  // if (!data) {
+  //   return <p>No data available</p>;
+  // }
   return (
-    <Box>
+    <Box sx={{ pb: 7 }}>
       <Typography sx={styles.header}>{selected?.title}</Typography>
 
       <Box sx={{ width: "100%" }}>

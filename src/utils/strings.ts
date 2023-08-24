@@ -24,3 +24,7 @@ export function stringReduceAddDots(value: string, limit: number) {
     return `${String(value).slice(0, limit)}...`;
   }
 }
+export function getName(inputString: string): string {
+  const parts = inputString.split("/").filter(part => part !== "");
+  return parts[0] || "";
+}
