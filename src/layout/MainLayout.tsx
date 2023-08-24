@@ -61,7 +61,14 @@ export default function MainLayout() {
             }}
           >
             <Box>
-              <Typography>{capitalizeFirstLetter(name)}</Typography>
+              <Typography
+                sx={{
+                  fontSize: "30px",
+                  fontWeight: 600,
+                }}
+              >
+                {capitalizeFirstLetter(name)}
+              </Typography>
             </Box>
             <Box
               sx={{

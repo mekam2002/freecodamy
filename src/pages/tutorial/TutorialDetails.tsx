@@ -38,7 +38,6 @@ export default function TutorialDetails() {
   return (
     <Box sx={{ pb: 7 }}>
       <Typography sx={styles.header}>{selected?.title}</Typography>
-
       <Box sx={{ width: "100%" }}>
         {data?.course.map((el: any, index: number) => (
           <Box key={index} sx={{ width: "100%" }}>
