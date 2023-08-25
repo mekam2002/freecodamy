@@ -3,16 +3,17 @@ import { createSlice } from '@reduxjs/toolkit'
 
 interface AuthState {
     isAuth: boolean
-    email?: string
-    name?: string,
-    birthDate?: string
+    userInfo?: {
+        email?: string
+        name?: string,
+        birthDate?: string
+    }
 
 }
 const initialState: AuthState = {
     isAuth: false,
-    email: "",
-    name: "",
-    birthDate: ""
+    userInfo: {}
+
 };
 
 const authtSlice = createSlice({
@@ -23,9 +24,12 @@ const authtSlice = createSlice({
         setAuth: (state, { payload }) => {
             state.isAuth = payload
         },
+        setUserData: (state, { payload }) => {
+            state.userInfo = payload
+        }
 
     }
 })
 
-export const { setAuth } = authtSlice.actions
+export const { setAuth, setUserData } = authtSlice.actions
 export default authtSlice.reducer

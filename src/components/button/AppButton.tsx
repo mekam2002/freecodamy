@@ -10,6 +10,7 @@ interface Props {
   endIcon?: React.ReactNode;
   titleStyle?: React.CSSProperties;
   containerStyle?: SxProps;
+  disabledStyle?: any;
   hoverStyle?: React.CSSProperties;
   loading?: boolean;
   disabled?: boolean;
@@ -41,6 +42,7 @@ const AppButton: React.FC<Props> = ({
   variant,
   hoverStyle,
   endIcon,
+  disabledStyle,
   onClick,
 }) => {
   const bgColor = useGetColors().main;
@@ -63,6 +65,7 @@ const AppButton: React.FC<Props> = ({
         color: "#fff",
         ...containerStyle,
         background: disabled || loading ? disabledColor : bg,
+        ...disabledStyle,
         "&:hover": {
           ...hoverStyle,
           background: disabled || loading ? disabledColor : bg || "",

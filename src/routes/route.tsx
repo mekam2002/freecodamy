@@ -14,6 +14,9 @@ import SportsKabaddiIcon from "@mui/icons-material/SportsKabaddi";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import Course from "../pages/course/Course";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import SignInScreen from "../pages/auth/SignInScreen";
+import SignUpScreen from "../pages/auth/SignUpScreen";
+import Profile from "../pages/profile/Profile";
 export interface LocalRouteProps {
   path: string;
   name?: string;
@@ -29,6 +32,18 @@ const NoSideBarRoute: any[] = [
     name: "Auth",
     path: "/auth",
     element: <Auth />,
+    children: [
+      {
+        name: "Sign In",
+        path: "/auth/signin",
+        element: <SignInScreen />,
+      },
+      {
+        name: "Sign Up",
+        path: "/auth/signup",
+        element: <SignUpScreen />,
+      },
+    ],
   },
   {
     name: "Main Layout",
@@ -40,13 +55,18 @@ const NoSideBarRoute: any[] = [
         path: "/course/:id",
         element: <TutorialDetails />,
       },
+      {
+        name: "Profile",
+        path: "/profile",
+        element: <Profile />,
+      },
     ],
   },
 
   // {
-  //   name: "Tutorial Details",
-  //   path: "/tutorial/:id",
-  //   element: <TutorialDetails />,
+  //   name: "Sign In",
+  //   path: "/signin",
+  //   element: <SignInScreen />,
   // },
 ];
 

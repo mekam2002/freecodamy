@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Avatar, Box, IconButton, Typography } from "@mui/material";
-import { Outlet, useLocation } from "react-router";
+import { Outlet, useLocation, useNavigate } from "react-router";
 import useMedia from "../hook/useMedia";
 import MainAppBar from "./MainAppBar";
 import MainDrawer from "./MainDrawer";
@@ -15,11 +15,20 @@ export default function MainLayout() {
   const { isPhone } = useMedia();
   const dispatch = useDispatch();
   const { open } = useSelector((state: any) => state.layout);
+  const { isAuth } = useSelector((state: any) => state.auth);
+  const navigate = useNavigate();
+
   // const [open2, setOpen] = React.useState(open);
 
   const [openModal, setOpenModal] = React.useState(false);
 
-  const modalHandler = () => setOpenModal((prev) => !prev);
+  const modalHandler = () => {
+    if (isAuth) {
+      navigate("/profile");
+      return;
+    }
+    setOpenModal((prev) => !prev);
+  };
 
   const openDrawer = () => {
     dispatch(setDrawer(true));
