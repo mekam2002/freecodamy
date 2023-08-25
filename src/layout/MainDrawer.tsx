@@ -20,7 +20,8 @@ import CustomTopBar from "./CustomTopBar";
 
 interface Props {
   open: boolean;
-  handleDrawer: () => void;
+  openDrawer: () => void;
+  closeDrawer: () => void;
 }
 
 const drawerWidth = 240;
@@ -63,7 +64,7 @@ const Drawer = styled(MuiDrawer, {
     "& .MuiDrawer-paper": closedMixin(theme),
   }),
 }));
-export default function MainDrawer({ open, handleDrawer }: Props) {
+export default function MainDrawer({ open, closeDrawer, openDrawer }: Props) {
   const colors = useGetColors();
   return (
     <Box sx={{ display: "flex" }}>
@@ -89,7 +90,12 @@ export default function MainDrawer({ open, handleDrawer }: Props) {
               FreeCodamy
             </Typography>
           )}
-          <IconButton onClick={handleDrawer}>
+          <IconButton
+            onClick={
+              //  handleDrawer
+              !open ? openDrawer : closeDrawer
+            }
+          >
             {!open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </Box>

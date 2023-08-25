@@ -8,20 +8,25 @@ import useGetColors from "../hook/useGetColors";
 import LoginModal from "../pages/auth/LoginModal";
 import AppInput from "../components/AppInput";
 import { capitalizeFirstLetter, getName } from "../utils/strings";
+import { useDispatch, useSelector } from "react-redux";
+import { setDrawer } from "../store/features/layoutSlice";
 
 export default function MainLayout() {
   const { isPhone } = useMedia();
-
-  const [open, setOpen] = React.useState(false);
+  const dispatch = useDispatch();
+  const { open } = useSelector((state: any) => state.layout);
+  // const [open2, setOpen] = React.useState(open);
 
   const [openModal, setOpenModal] = React.useState(false);
 
   const modalHandler = () => setOpenModal((prev) => !prev);
 
-  const colors = useGetColors();
+  const openDrawer = () => {
+    dispatch(setDrawer(true));
+  };
 
-  const handleDrawer = () => {
-    setOpen((prev) => !prev);
+  const closeDrawer = () => {
+    dispatch(setDrawer(false));
   };
 
   const location = useLocation();
@@ -38,7 +43,11 @@ export default function MainLayout() {
       {isPhone ? (
         <MainAppBar onClick={() => modalHandler()} />
       ) : (
-        <MainDrawer open={open} handleDrawer={handleDrawer} />
+        <MainDrawer
+          open={open}
+          closeDrawer={closeDrawer}
+          openDrawer={openDrawer}
+        />
       )}
 
       <Box
