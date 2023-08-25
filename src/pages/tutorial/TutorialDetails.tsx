@@ -1,15 +1,22 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { useEffect, useMemo } from "react";
+import { Avatar, Box, Stack, Typography } from "@mui/material";
 import { useParams } from "react-router";
 import useGetColors from "../../hook/useGetColors";
-import { doc, getDoc, DocumentSnapshot, Firestore } from "firebase/firestore";
-import { firestoreDb } from "../../service/firebase";
 import useFsDoc from "../../hook/useFsDoc";
-import Loader from "../../components/Loader/Loader";
 import { useSelector } from "react-redux";
 import TextAnimation from "../../components/TextAnimation";
 
+import Prism from "prismjs";
+import "prismjs/components/prism-clike";
+import "prismjs/components/prism-javascript";
+import "prismjs/themes/prism.css";
+import CodeDisplay from "../../components/codeDisplay/CodeDisplay";
+
 export default function TutorialDetails() {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   const { id } = useParams();
   const selector = useSelector((state: any) => state.course);
   const styles = useStyle();
@@ -35,19 +42,46 @@ export default function TutorialDetails() {
   // if (!data) {
   //   return <p>No data available</p>;
   // }
+  console.log(data);
   return (
-    <Box sx={{ pb: 7 }}>
-      <Typography sx={styles.header}>{selected?.title}</Typography>
+    <Box
+      sx={{
+        pb: 7,
+      }}
+    >
+      <Typography sx={styles.header}>{data?.title}</Typography>
       <Box sx={{ width: "100%" }}>
         {data?.course.map((el: any, index: number) => (
-          <Box key={index} sx={{ width: "100%" }}>
+          <Box
+            key={index}
+            sx={{
+              width: "100%",
+              flexDirection: "column",
+              justifyContent: "center",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <Typography sx={styles.title}>{el.title}</Typography>
-            <Typography sx={styles.paragraph}>{el.description}</Typography>
+            <Typography sx={{ ...styles.paragraph, width: "100%" }}>
+              {el.description}
+            </Typography>
+            {el.codeblock !== "" ? <CodeDisplay code={el.codeblock} /> : true}
+            {el.imagePath !== "" ? (
+              <Avatar
+                src={el.imagePath}
+                variant="square"
+                sx={{ width: "50%", height: 500 }}
+              />
+            ) : (
+              true
+            )}
             <Stack spacing={3} mt={4}>
               {el.children.map((ev: any, index: number) => (
-                <Box>
+                <Box key={index}>
                   <Typography sx={styles.titl}>{ev.title}</Typography>
-                  <Typography sx={styles.chi}>{ev.descrition}</Typography>
+                  <Typography sx={styles.paragraph}>{ev.descrition}</Typography>
+                  {ev.codeblock ? <CodeDisplay code={ev.codeblock} /> : null}
                 </Box>
               ))}
             </Stack>
@@ -74,7 +108,7 @@ const useStyle = () => {
     },
     paragraph: {
       mt: 2,
-      fontSize: "25px",
+      fontSize: "20px",
       fontWeight: 500,
       lineHeight: "42px",
       color: colors.grey1,
