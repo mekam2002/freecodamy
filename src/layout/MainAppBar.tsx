@@ -50,7 +50,7 @@ export default function MainAppBar({ onClick }: Props) {
       </Typography>
       <List sx={{ px: 2, bgcolor: colors.main, height: "100%" }}>
         <Stack spacing={2} mt={2}>
-          {SidebarRoutes?.[0]?.children?.map((el, index) => (
+          {SidebarRoutes?.[0]?.children?.map((el: any, index: number) => (
             <SideBarItem key={index} open={true} item={el} />
           ))}
         </Stack>
