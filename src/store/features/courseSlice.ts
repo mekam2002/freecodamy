@@ -13,14 +13,34 @@ export interface CourseType {
     tags?: string[]
 }
 
+interface ChildrenType {
+    title: string,
+    description: string,
+    imagePath: number,
+    codeBlock: number,
+    children: any[]
+}
+
+export interface CourseDetailsType {
+    courseId: string;
+    title: string;
+    course: ChildrenType[]
+}
+
 interface CoursState {
-    data: CourseType[]
+    data: CourseType[],
+    details: CourseDetailsType | null,
+    loadingDetails: boolean,
+    errorDetails: any
     loading: boolean
 
 }
 const initialState: CoursState = {
     data: [],
     loading: false,
+    details: null,
+    loadingDetails: false,
+    errorDetails: null
 };
 
 const courserSlice = createSlice({
@@ -33,9 +53,19 @@ const courserSlice = createSlice({
         setLoadingSlice: (state, { payload }) => {
             state.loading = payload
         },
+        setLoadingDetailsSlice: (state, { payload }) => {
+            state.loadingDetails = payload
+        },
+        setErrorDetailsSlice: (state, { payload }) => {
+            state.errorDetails = payload
+        },
+        setDataDetails: (state, { payload }) => {
+            state.details = payload
+            console.log(state.details)
+        },
 
     }
 })
 
-export const { setData, setLoadingSlice } = courserSlice.actions
+export const { setData, setLoadingSlice, setLoadingDetailsSlice, setDataDetails, setErrorDetailsSlice } = courserSlice.actions
 export default courserSlice.reducer
