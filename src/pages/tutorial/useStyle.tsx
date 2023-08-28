@@ -4,6 +4,15 @@ export const useStyle = () => {
   const colors = useGetColors();
 
   const styles = {
+    gridCont: {
+      borderRadius: "15px",
+      bgcolor: colors.white,
+      p: "19px 17px",
+      mt: "21px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+    },
     tutTitle: {
       fontSize: "20px",
       fontWeight: 600,

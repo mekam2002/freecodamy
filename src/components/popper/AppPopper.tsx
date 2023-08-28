@@ -4,6 +4,7 @@ import { Box, IconButton, Popover, SxProps, Typography } from "@mui/material";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import "./AppPopper.css";
 import AppButton from "../button/AppButton";
+import useGetColors from "../../hook/useGetColors";
 
 export default function AppPopper({
   icon,
@@ -47,12 +48,12 @@ export default function AppPopper({
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
-
+  const colors = useGetColors();
   return (
     <Box>
       <IconButton
         sx={{
-          backgroundColor: "#E6EAEE",
+          backgroundColor: colors.main,
           height: 45,
           width: 45,
           borderRadius: "8px",

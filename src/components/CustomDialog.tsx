@@ -1,4 +1,5 @@
 import {
+  Box,
   Dialog,
   DialogActions,
   DialogContent,
@@ -87,22 +88,33 @@ export default function ConfirmDialog({
               </Typography>
               {subtitle}
             </Stack>
-            {showCloseButton ? (
-              <IconButton
-                sx={{
-                  borderRadius: 1,
-                  background: "#8392A115",
-                  "&:hover": { background: "#8392A115" },
-                }}
-                onClick={onClose}
-              >
-                <Close />
-              </IconButton>
-            ) : null}
+            <IconButton
+              sx={{
+                borderRadius: 1,
+                background: "#8392A115",
+                "&:hover": { background: "#8392A115" },
+              }}
+              onClick={onClose}
+            >
+              <Close />
+            </IconButton>
           </Stack>
           {subHeader}
         </DialogTitle>
       ) : null}
+      <Box sx={{ justifyContent: "end", display: "flex", p: 1 }}>
+        <IconButton
+          sx={{
+            borderRadius: 1,
+            background: "#8392A115",
+            "&:hover": { background: "#8392A115" },
+          }}
+          onClick={onClose}
+        >
+          <Close />
+        </IconButton>
+      </Box>
+
       <DialogContent dividers={dividers} {...dialogContentProps}>
         {message ? (
           <DialogContentText>

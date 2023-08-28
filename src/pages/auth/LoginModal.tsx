@@ -54,13 +54,17 @@ export default function LoginModal({ open, onClose }: Props) {
         form.password
       );
       const user = userCredential.user;
+      console.log(user);
       dispatch(setAuth(true));
-      notifySuccess({
-        message: "Successfully signed in",
-        vertical: "top",
-        horizontal: "right",
-      });
       onClose();
+
+      onClose();
+
+      // notifySuccess({
+      //   message: "Successfully signed in",
+      //   vertical: "top",
+      //   horizontal: "right",
+      // });
 
       // ... handle successful sign-in
     } catch (error: any) {

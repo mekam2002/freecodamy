@@ -67,7 +67,7 @@ export default function TutorialDetails() {
               {el.description}
             </Typography>
             {el.codeblock !== "" ? <CodeDisplay code={el.codeblock} /> : true}
-            {el.imagePath !== "" ? (
+            {/* {el.imagePath !== "" ? (
               <Avatar
                 src={el.imagePath}
                 variant="square"
@@ -75,7 +75,7 @@ export default function TutorialDetails() {
               />
             ) : (
               true
-            )}
+            )} */}
             <Stack spacing={3} mt={4}>
               {el.children.map((ev: any, index: number) => (
                 <Box key={index}>
